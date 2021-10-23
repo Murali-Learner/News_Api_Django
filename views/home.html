@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static '/cssStyles/home.css' %}" />
+
+    <title>News Api</title>
+  </head>
+  <body>
+    <center><h1 class="title">News List</h1></center>
+    <div class="newsGrid" style="text-align: center">
+      {% for res in response %}
+      <a href="{{res.url}}" class="newsCard" style="text-decoration: none"
+        ><p class="author">Author- {{res.author}}</p>
+        <img class="titleImage" src="{{res.urlToImage}}" />
+        <p class="titleContent">{{ res.title }}</p></a
+      >
+
+      {% endfor %}
+    </div>
+  </body>
+</html>
